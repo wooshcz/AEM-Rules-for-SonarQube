@@ -377,7 +377,7 @@
           <pluginUrl>https://github.com/wttech/AEM-Rules-for-SonarQube</pluginUrl>
           <requiredForLanguages>java,html</requiredForLanguages>
           <skipDependenciesPackaging>false</skipDependenciesPackaging>
-          <sonarLintSupported>true</sonarLintSupported>
+          <sonarLintSupported>false</sonarLintSupported>
         </configuration>
       </plugin>
       <plugin>
