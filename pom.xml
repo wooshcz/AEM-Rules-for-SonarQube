@@ -104,7 +104,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <htl.version>1.1.2-1.4.0</htl.version>
-    <sonar.version>9.8.0.203</sonar.version>
+    <sonar.version>8.9.6.50800</sonar.version>
     <sonar.html.version>3.0.1.1444</sonar.html.version>
     <sonar.java.plugin>7.6.0.28201</sonar.java.plugin>
     <sonar-java-checks-testkit-version>7.6.0.28201</sonar-java-checks-testkit-version>
@@ -124,11 +124,12 @@
   </repositories>
 
   <dependencies>
-    <dependency>
+    <!-- <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
       <version>2.5</version>
-    </dependency>
+      <scope>provided</scope>
+    </dependency> -->
     <dependency>
       <groupId>org.apache.sling</groupId>
       <artifactId>org.apache.sling.scripting.sightly.compiler</artifactId>
@@ -137,7 +138,7 @@
 
     <!-- sonarsource version -->
     <dependency>
-      <groupId>org.sonarsource.api.plugin</groupId>
+      <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-plugin-api</artifactId>
       <version>${sonar.version}</version>
       <scope>provided</scope>
@@ -145,7 +146,7 @@
     <dependency>
       <groupId>org.sonarsource.sonarqube</groupId>
       <artifactId>sonar-plugin-api-impl</artifactId>
-      <version>9.8.0.63668</version>
+      <version>${sonar.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -198,6 +199,7 @@
       <groupId>org.sonarsource.html</groupId>
       <artifactId>sonar-html-plugin</artifactId>
       <version>${sonar.html.version}</version>
+      <scope>provided</scope>
       <exclusions>
         <exclusion>
           <groupId>com.google.guava</groupId>
@@ -224,6 +226,12 @@
       <artifactId>java-checks-testkit</artifactId>
       <version>${sonar-java-checks-testkit-version}</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>jsr305</artifactId>
+          <groupId>com.google.code.findbugs</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.easytesting</groupId>
@@ -314,6 +322,12 @@
       <artifactId>guava</artifactId>
       <version>26.0-jre</version>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <artifactId>jsr305</artifactId>
+          <groupId>com.google.code.findbugs</groupId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 
