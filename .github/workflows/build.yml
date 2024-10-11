@@ -46,6 +46,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_KEY }}
         run: |
           mvn -ntp clean package
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           path: target/*.jar
