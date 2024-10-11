@@ -104,8 +104,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <htl.version>1.1.2-1.4.0</htl.version>
-    <!-- <sonar.version>8.9.6.50800</sonar.version> -->
-    <sonar.apiVersion>9.8.0.203</sonar.apiVersion>
+    <sonar.version>8.9.6.50800</sonar.version>
+    <!-- <sonar.version>9.8.0.203</sonar.version> -->
     <sonar.html.version>3.0.1.1444</sonar.html.version>
     <sonar.java.plugin>7.6.0.28201</sonar.java.plugin>
     <sonar-java-checks-testkit-version>7.6.0.28201</sonar-java-checks-testkit-version>
@@ -137,18 +137,24 @@
     </dependency>
 
     <!-- sonarsource version -->
-    <dependency>
+    <!-- <dependency>
       <groupId>org.sonarsource.api.plugin</groupId>
       <artifactId>sonar-plugin-api</artifactId>
-      <version>${sonar.apiVersion}</version>
-      <scope>provided</scope>
-    </dependency>
-    <!-- <dependency>
-      <groupId>org.sonarsource.sonarqube</groupId>
-      <artifactId>sonar-plugin-api-impl</artifactId>
-      <version>${sonar.apiVersion}</version>
+      <version>${sonar.version}</version>
       <scope>provided</scope>
     </dependency> -->
+    <dependency>
+      <groupId>org.sonarsource.sonarqube</groupId>
+      <artifactId>sonar-plugin-api</artifactId>
+      <version>${sonar.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.sonarsource.sonarqube</groupId>
+      <artifactId>sonar-plugin-api-impl</artifactId>
+      <version>${sonar.version}</version>
+      <scope>provided</scope>
+    </dependency>
 
     <dependency>
       <groupId>org.sonarsource.java</groupId>
@@ -363,6 +369,7 @@
           </pluginSourcesUrl>
           <pluginUrl>https://github.com/wttech/AEM-Rules-for-SonarQube</pluginUrl>
           <requiredForLanguages>java,html</requiredForLanguages>
+          <pluginApiMinVersion>8.9</pluginApiMinVersion>
           <skipDependenciesPackaging>false</skipDependenciesPackaging>
           <sonarLintSupported>true</sonarLintSupported>
         </configuration>
